@@ -1,11 +1,11 @@
-# Example App
+# Practice App
 
-In the `example_app` directory:
+In the `cypherlab_app` directory:
 
 ```
 python -m venv .venv
 source .venv/bin/activate
 pip install -e .
 # After starting the workcell:
-python -m example_app
+python -m cypherlab_app
 ```

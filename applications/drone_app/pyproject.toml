@@ -1,0 +1,14 @@
+[project]
+name = "drone_app"
+version = "1.0.0"
+description = "TODO."
+authors = [{name = "Leslie Selorm Afeawo", email="lafeawo@bowiestate.edu"}{name = "Starfranklyn Olivers", email="solivers@bowiestate.edu"}]
+dependencies = [
+    "ad_sdl.wei",
+]
+requires-python = ">=3.8.1"
+readme = "README.md"
+license = {text = "MIT"}
+
+[project.urls]
+homepage = "TODO"

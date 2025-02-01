@@ -1,6 +1,7 @@
-#!/usr/bin/env python3
-"""Example experiment application that uses the WEI client to run a workflow."""
 
+#!/usr/bin/env python3
+
+""" Template experiment application that uses the WEI client to run a workflow."""
 from pathlib import Path
 
 from wei import ExperimentClient
@@ -11,14 +12,14 @@ def main() -> None:
     """Runs an example WEI workflow"""
     # *This defines the ExperimentDesign object that will be used to register the experiment
     experiment_design = ExperimentDesign(
-        experiment_name="Example_Experiment",
-        experiment_description="This is an example experiment",
+        experiment_name="Test_Experiment",
+        experiment_description="This a test experiment to demonstrate use of the WEI client",
     )
-    # *Optionally, you can also define a Campaign object to group multiple experiments together
+    # *We can also define a Campaign object to group multiple experiments together
     # *This is useful when you want to run multiple experiments together
-    campaign = CampaignDesign(
-        campaign_name="Example_Campaign",
-        campaign_description="This is an example campaign",
+    campaign = CampaignDesign(              # This is an advanced feature and can be ignored for now - Lee
+        campaign_name="My_First_Campaign",
+        campaign_description="This is a campaign, a way of grouping together multiple experiments",
     )
     experiment_client = ExperimentClient(
         server_host="localhost",
@@ -29,7 +30,7 @@ def main() -> None:
 
     # *The path to the Workflow definition yaml file
     workflow_dir = (Path(__file__).parent.parent / "workflows").resolve()
-    workflow_path = workflow_dir / "example.workflow.yaml"
+    workflow_path = workflow_dir / "cypherlab.workflow.yaml"
 
     # *This runs the workflow
     wf_run = experiment_client.start_run(

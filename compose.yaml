@@ -1,4 +1,4 @@
-name: example_workcell
+name: cypherlab_workcell
 services:
   ###########
   # Modules #
@@ -12,7 +12,7 @@ services:
     command: python -m camera_rest_node --port 2001
     env_file:
       - .env
-
+ 
   #####################
   # WEI Core Services #
   #####################

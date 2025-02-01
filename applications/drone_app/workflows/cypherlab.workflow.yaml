@@ -1,0 +1,66 @@
+name: Cypherlab_Workflow        #Modified WEI Template Workflow for BSU Cypherlab's Robotic Experiments
+
+metadata:                
+  author: Bowie State University's Cypherlab Team 
+  info: WEI Workflow template for conducting BSU Cypherlab's Robotic experimnents with Drones. Commonly Used actions will be predefined in this template, comment out what isnt needed.
+  version: 0.1
+
+
+flowdef:                 
+  - name: Drone rise to `payload.altitude` feet
+    module: drone_controls
+    action: takeoff
+    args:
+      altitude: "payload.altitude"
+    comment: Rise to `payload.altitude` feet
+   
+  - name: Drone maintains an altitude of `payload.altitude` meters for `payload.hover_time` seconds at `payload.coordinates`
+    module: drone_controls
+    action: hover
+    args:
+        altitude: "payload.altitude"
+        hover_time: "payload.hover_time"
+        coordinates: "payload.coordinates"
+     comment: Hover at `payload.altitude` meters for `payload.hover_time` seconds at `payload.coordinates`
+   
+  - name: Drone descends to the ground at `payload.coordinates` from `payload.altitude` feet 
+    module: drone_controls
+    action: land
+    args:
+      coordinates: "payload.coordinates"
+      altitude: "payload.altitude"
+    comment: Land the drone at the specified - `payload.coordinates` - coordinates
+  
+  - name: Drone moves to `payload.coordinates` from `payload.altitude` feet at `payload.speed` m/s
+    module: drone_controls
+    action: move
+    args:
+      coordinates: "payload.coordinates"
+      altitude: "payload.altitude"
+      speed: "payload.speed"
+    comment: Move to `payload.coordinates` from `payload.altitude` feet at `payload.speed` m/s
+
+  - name: Drone rotates `payload.angle` degrees at `payload.speed` degrees/s
+    module: drone_controls
+    action: rotate
+    args:
+      angle: "payload.angle"
+      speed: "payload.speed"
+    comment: Rotate `payload.angle` degrees at `payload.speed` degrees/s 
+  
+  
+  
+  ##Example actions provided by AD-SDL##
+  # - name: Sleep workcell for `payload.wait_time` seconds
+  #   module: utilities
+  #   action: delay
+  #   args:
+  #     seconds: "payload.wait_time"
+  #   comment: Delay for `payload.wait_time` seconds before we take a picture
+
+  # - name: Take Picture  
+  #   module: webcam
+  #   action: take_picture
+  #   data_labels:
+  #     image: experiment_result
+  #   comment: Take a picture of the workcell

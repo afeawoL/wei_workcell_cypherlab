@@ -3,7 +3,7 @@
 .PHONY += init paths checks test clean
 
 init: # Do the initial configuration of the project
-	@test -e .env || cp example.env .env
+	@test -e .env || cp cypherlab.env .env
 
 .env: init
 
