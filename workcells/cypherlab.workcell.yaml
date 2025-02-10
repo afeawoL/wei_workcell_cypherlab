@@ -1,4 +1,4 @@
-name: Example_Workcell
+name: Cypherlab_Workcell
 
 # Configuration info and parameters for the workcell and WEI
 # All of these values can be overridden via CLI arguments

@@ -1,0 +1,9 @@
+# Work Log
+-----------
+
+Project modified to meet needs of drone_sim project. Worked through the provided template wei worksheet filesystem to modify and apply the template to our use. filenames are representative of our team ('BSU CS Dept Cypherlab') and are usually prefixed with 'cypherlab'.
+
+Project can be run using docker. will setup servers 'wei_redis' and 'wei-*' etc.
+
+git config --global user.email " afeawol0329@students.bowiestate.edu"
+  git config --global user.name "afeawoL"

@@ -44,7 +44,7 @@ services:
     image: redis
     container_name: wei_redis
     ports:
-      - 6379:6379
+      - 6380:6380
     volumes:
       - ${REDIS_DIR}:/data
     command: redis-server --save 60 1 --loglevel warning
