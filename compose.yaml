@@ -8,8 +8,8 @@ services:
     container_name: camera_node
     privileged: true # needed for hardware access
     ports:
-      - 2001:2001
-    command: python -m camera_rest_node --port 2001
+      - 2003:2003
+    command: python -m camera_rest_node --port 2003
     env_file:
       - .env
  
@@ -20,7 +20,7 @@ services:
     image: ghcr.io/ad-sdl/wei
     container_name: wei_server
     ports:
-      - 8000:8000
+      - 8005:8005
     volumes:
       - ./workcells:/workcells
       - ${WEI_DATA_DIR}:/home/app/.wei
@@ -33,18 +33,18 @@ services:
 
   utilities:
     image: ghcr.io/ad-sdl/wei
-    container_name: utilities
+    container_name: utility
     ports:
-      - 8001:8001
+      - 8004:8004
     command: 'python3 -m wei.modules.utility_module
-      --port 8001
-      --alias utilities'
+      --port 8004
+      --alias utility'
 
   wei_redis:
     image: redis
     container_name: wei_redis
     ports:
-      - 6380:6380
+      - 8003:8003
     volumes:
       - ${REDIS_DIR}:/data
     command: redis-server --save 60 1 --loglevel warning
